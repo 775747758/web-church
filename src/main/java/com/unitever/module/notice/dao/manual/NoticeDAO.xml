@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unitever.module.notice.dao.manual.NoticeDAO">
+
+	<resultMap type="Notice" id="resultNotice">
+		<id column="id" property="id" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="publishTime" property="publishTime" />
+		<association property="publisher" column="id_user"
+			select="com.unitever.module.user.dao.manual.UserDAO.get" />
+	</resultMap>
+
+	<select id="getAll" resultMap="resultNotice">
+		select * From notice order by publishTime desc
+	</select>
+
+	<select id="getByLimit"  resultMap="resultNotice">
+		select * From notice  order by publishTime desc limit  #{start},#{num}
+	</select>
+	
+	<select id="getNoticeCount"  resultType="java.lang.Integer">
+		select count(*) From notice
+	</select>
+
+	<insert id="save" parameterType="Notice">
+		insert into
+		notice(id,title,content,id_user,publishTime)
+		value(#{id},#{title},#{content},#{publisher.id},#{publishTime})
+	</insert>
+
+</mapper>

@@ -1,0 +1,43 @@
+10
+
+dir
+728
+https://192.168.1.8/svn/common/platform/trunk/src/main/java/com/unitever/demo
+https://192.168.1.8/svn/common
+
+
+
+2015-03-17T07:41:00.444986Z
+717
+wangdawei
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+683422cb-41ee-a94a-abff-52a28e945b95
+
+controller
+dir
+
+dao
+dir
+
+model
+dir
+
+service
+dir
+
+util
+dir
+

@@ -1,0 +1,40 @@
+10
+
+dir
+728
+https://192.168.1.8/svn/common/platform/trunk/webapp/demo/common/js/jquery-syntax
+https://192.168.1.8/svn/common
+
+
+
+2015-03-04T05:32:40.697008Z
+695
+wangdawei
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+683422cb-41ee-a94a-abff-52a28e945b95
+
+ext
+dir
+
+public
+dir
+
+source
+dir
+
+themes
+dir
+

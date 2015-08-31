@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/common/!svn/ver/695/platform/trunk/src/main/java/com/unitever/demo/model
+END
+TBUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/common/!svn/ver/695/platform/trunk/src/main/java/com/unitever/demo/model/TBUser.java
+END
+TBAddress.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/common/!svn/ver/695/platform/trunk/src/main/java/com/unitever/demo/model/TBAddress.java
+END
+TBDept.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/common/!svn/ver/695/platform/trunk/src/main/java/com/unitever/demo/model/TBDept.java
+END
+TestObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/common/!svn/ver/695/platform/trunk/src/main/java/com/unitever/demo/model/TestObject.java
+END

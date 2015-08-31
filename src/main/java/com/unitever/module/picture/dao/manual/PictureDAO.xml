@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unitever.module.picture.dao.manual.PictureDAO">
+
+	<resultMap type="Picture" id="resultPicture">
+		<id column="id" property="id" />
+		<result column="title" property="title" />
+		<result column="date" property="date" />
+		<association property="user" column="id_user"
+			select="com.unitever.module.user.dao.manual.UserDAO.get" />
+	</resultMap>
+
+	<select id="getByLimit"  resultMap="resultPicture">
+		select * From picture  order by date desc limit  #{start},#{num}
+	</select>
+	
+	<select id="getPictureCount"  resultType="java.lang.Integer">
+		select count(*) From picture
+	</select>
+	
+	<insert id="save" parameterType="Picture">
+		insert into
+		picture(id,title,id_user,date)
+		value(#{id},#{title},#{user.id},#{date})
+	</insert>
+
+
+</mapper>

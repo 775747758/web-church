@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unitever.module.user.dao.manual.UserDAO">
+
+    <!-- 获取一条数据 -->
+    <select id="get" resultType="User">
+     	select * from user where id=#{id}
+    </select>
+	<!-- 获取一条数据 -->
+    <select id="getAll" resultType="User">
+     	select * from user
+    </select>
+    <!-- 删除一条数据 -->
+    <delete id="delete">
+        delete from user where id=#{id}
+    </delete>
+    
+    <!-- 新增用户 -->
+	<insert id="save" parameterType="User">
+		insert into user(id,name,gender,age,username,password,id_church,registerDate) value(#{id},#{name},#{gender},#{age},#{username},#{password},#{id_church},#{registerDate})
+	</insert>
+    
+    <!-- 更新一条数据 -->
+    <update id="update" parameterType="User">
+        update user
+        <set>
+	         <if test="name != null and name != '' ">  
+	            name=#{name},  
+	         </if>
+	         <if test="username != null and username != '' ">  
+	            username=#{username},  
+	         </if>
+	         <if test="password != null and password != '' ">  
+	            password=#{password},  
+	         </if>
+	         <if test="gender != null and gender != '' ">  
+	            gender=#{gender},  
+	         </if>
+	         <if test="age != null and age != '' ">  
+	            age=#{age},  
+	         </if>
+	         <if test="id_church != null and id_church != '' ">  
+	            id_church=#{id_church},  
+	         </if>
+	         <if test="registerDate != null ">  
+	            registerDate=#{registerDate},  
+	         </if>
+        </set>
+         WHERE id=#{id}  
+    </update> 
+    
+    <select id="getUserWithLoginName" resultType="User">
+    	select * from user where username=#{username} 
+    </select>
+    <select id="getUserWithWeChatNum" resultType="User">
+    	select * from user where wechatnum=#{weChatNum} 
+    </select>
+    
+    <select id="getUserListWithUser" resultType="User" parameterType="User">
+   		select * From user 
+   		<where>
+   			1=1
+   			<if test="id != null">
+			     and id =#{id}
+			</if>
+			<if test="name != null and name!=''">
+			     and name like CONCAT('%','${name}','%' )  
+			</if>
+		</where> 
+	</select>
+</mapper>
